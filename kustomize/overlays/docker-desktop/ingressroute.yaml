@@ -11,7 +11,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`rabbitmq-hello-world.jayamorin.com`)
+      match: Host(`rabbitmq-hello-world.jayamorin.com`) && PathPrefix(`/`)
       services:
         - kind: Service
           name: rabbitmq-hello-world
