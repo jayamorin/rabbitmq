@@ -17,3 +17,5 @@ spec:
           name: rabbitmq-hello-world
           namespace: hello-world
           port: 15672
+  tls:
+    certResolver: default
