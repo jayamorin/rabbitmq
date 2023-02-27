@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/component: rabbitmq
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - kind: Rule
       match: Host(`rabbitmq-hello-world.jayamorin.com`)
