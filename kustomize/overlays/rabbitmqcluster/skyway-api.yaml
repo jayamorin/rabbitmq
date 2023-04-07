@@ -2,10 +2,10 @@
 apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:
-  name: rabbitmq-hello-world
-  namespace: hello-world
+  name: skyway-api
+  namespace: skyway-api
 spec:
-  replicas: 4
+  replicas: 5
   rabbitmq:
     additionalConfig: |
       log.console.level = info
