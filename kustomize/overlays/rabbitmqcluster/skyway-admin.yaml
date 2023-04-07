@@ -2,8 +2,8 @@
 apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:
-  name: rabbitmq-skyway
-  namespace: skyway
+  name: skyway-admin
+  namespace: skyway-admin
 spec:
   replicas: 5
   rabbitmq:
