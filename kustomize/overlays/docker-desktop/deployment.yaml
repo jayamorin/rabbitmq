@@ -1,0 +1,26 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rabbitmq
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app.kubernetes.io/name: rabbitmq
+    app.kubernetes.io/part-of: management
+spec:
+  project: default
+  source:
+    path: kustomize/overlays/docker-desktop
+    repoURL: https://github.com/jayamorin/rabbitmq.git
+    targetRevision: develop
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+  revisionHistoryLimit: 10
